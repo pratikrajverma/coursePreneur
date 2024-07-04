@@ -1,0 +1,39 @@
+/* write your css here */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+.homepage_bg {
+    background-image: url('../src/assets/Images/bghome.svg');
+}
+
+.videoBtn {
+
+
+
+    width: Hug (139px)px;
+    height: Hug (48px)px;
+    padding: 12px 24px 12px 24px;
+    color: black;
+    gap: 8px;
+    border-radius: 8px ;
+    opacity: 0px;
+    background: #FFD60A;
+    box-shadow: -2px -2px 0px 0px #FFFFFF82 inset;
+    transition: all 200ms;
+ 
+
+
+    
+
+
+}
+
+.videoBtn:hover {
+    transform: scale(0.9);
+}
