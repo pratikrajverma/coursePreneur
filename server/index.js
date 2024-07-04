@@ -11,17 +11,26 @@ const fileupload = require('express-fileupload');
 const cors = require('cors');    
 const cookieParser =  require('cookie-parser');    
 require('dotenv').config();    
-      
- 
-    
- 
+
+
+//set port number
+const PORT = process.env.PORT || 5000;
+
+
+//database connection
+database.connectDB();
+
+//cloudinary connection
+cloudinaryConnect() 
+  
 
 //middleware
 // app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-            origin: 'http://localhost:3000',
+            // origin: 'http://localhost:3000',
+            origin: '*',
             credentials:true,
         }));
 
@@ -32,15 +41,7 @@ app.use(fileupload({
         
 
 
-//set port number
-const PORT = process.env.PORT || 4000;
 
-//database connection
-database.connectDB();
-
-//cloudinary connection
-cloudinaryConnect() 
-  
 
 //routes importing  
 const userRoutes = require('./routes/User');    
@@ -60,7 +61,7 @@ app.use('/api/v1/course', courseRoutes);
 app.use('/',(req,res)=>{ 
     return res.json({
         success:true,
-        message:'welcome to Backend Server StudyNotion..... '
+        message:'welcome to Backend Server CoursePreneur..... '
     })
 })
 
