@@ -27,7 +27,7 @@ const sendOTP = async (req, res) => {
         }
 
         //generate otp
-        var otp = otpGenerator.generate(6, {       // Yeh code ek OTP (One Time Password) generate karta hai, jo 6 characters ka hota hai. Ismein teen properties di gayi hain jo control karte hain ki kya OTP mein uppercase alphabets, lowercase alphabets aur special characters honge ya nahi
+        var otp = otpGenerator.generate(6, {      
             upperCaseAlphabets: false,
             lowerCaseAlphabets: false,
             specialChars: false,
@@ -35,9 +35,9 @@ const sendOTP = async (req, res) => {
 
 
         //check unique otp is present or not
-        let result = await OTP.findOne({ otp: otp });      //this is checking that is this otp has already created by same user for any other varification if yes then regenrate otp jabtak ki otp db me mil raha he jaise hi otp nahi milega then that will be the final otp
+        let result = await OTP.findOne({ otp: otp });    
 
-        while (result)               //if result is true it means that otp has already created by same user for any other varification so it will be regenrate otp and if result is false then it means current otp db me nahi he
+        while (result)                
         {
             otp = otpGenerator.generate(6, {
                 upperCaseAlphabets: false,
@@ -45,7 +45,7 @@ const sendOTP = async (req, res) => {
                 specialChars: false,
             })
 
-            result = await OTP.findOne({ otp: otp }); // Loop ke andar result ko update karein
+            result = await OTP.findOne({ otp: otp });  
         }
 
         console.log('generated otp: ', otp);
@@ -97,10 +97,7 @@ const signUp = async (req, res) => {
             otp,
         } = req.body;
 
-        // console.log(`signup data :   firstname : ${firstname}, lastname : ${lastname}, email : ${email}, password : ${password}, confirmPassword : ${confirmPassword}, otp : ${otp} , accountType : ${accountType}`)
-         
-
-        //validation ho raha he ki koi input khali to nahi he agar ha to return false kar do aur user ko kaho Please fill all the fields
+       
         if (!firstname || !lastname || !email || !password || !confirmPassword || !otp) {
             return res.status(403).json({
                 success: false,

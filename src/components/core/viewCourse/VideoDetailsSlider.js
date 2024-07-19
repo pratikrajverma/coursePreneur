@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { CurrentTimeDisplay } from 'video-react';
+// import { CurrentTimeDisplay } from 'video-react';
 import { IoIosArrowUp } from "react-icons/io";
 
 

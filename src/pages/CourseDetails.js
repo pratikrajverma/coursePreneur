@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { buyCourse } from '../services/operations/studentFeaturesAPI'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import { toast } from 'react-hot-toast'
+// import { toast } from 'react-hot-toast'
 import { fetchCourseDetails } from '../services/operations/courseDetailsAPI'
 import GetAvgRating from '../utils/avgRating'
 
-import Error from '../pages/Error'
+// import Error from '../pages/Error'
 import ConfirmationModal from '../components/common/ConfirmationModal';
 import RatingStars from '../components/common/RatingStars';
 

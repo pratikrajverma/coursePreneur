@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-   
+    
     
 //importing  
 // const bodyParser = require('body-parser'); 
@@ -59,7 +59,7 @@ app.use('/api/v1/course', courseRoutes);
 
 //default route
 app.use('/',(req,res)=>{ 
-    return res.json({
+    return res.json({ 
         success:true,
         message:'welcome to Backend Server CoursePreneur..... '
     })

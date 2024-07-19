@@ -6,7 +6,7 @@ const IconBtn = ({
     children,
     disabled,
     outline=false,
-    coustomClasses,
+    // coustomClasses,
     type,
 }) => {
   return (
