@@ -8,18 +8,18 @@ import ForgotPassword from "./pages/ForgotPassword";
 import OpenRoute from "./components/core/Auth/OpenRoute";
 import UpdatePassword from "./pages/UpdatePassword";
 import VerifyEmail from "./pages/VerifyEmail";
- 
+
 import ContactUs from "./pages/ContactUs";
 import About from "./pages/About";
 import MyProfile from './components/core/Dashboard/MyProfile'
 import Dashboard from './pages/Dashboard'
 import PrivateRoute from './components/core/Auth/PrivateRoute'
-import Error  from "./pages/Error";
+import Error from "./pages/Error";
 import Settings from "./components/core/Dashboard/settings/Index";
 import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
 import Cart from './components/core/Dashboard/cart/index'
 
-import {ACCOUNT_TYPE} from './utils/constants'
+import { ACCOUNT_TYPE } from './utils/constants'
 import { useSelector } from "react-redux";
 
 import AddCourse from './components/core/Dashboard/AddCourse/index';
@@ -35,7 +35,7 @@ import Instructor from "./components/core/Dashboard/instructorDashboard/Instruct
 
 
 function App() {
-  const {user} = useSelector((state)=>state.profile);
+  const { user } = useSelector((state) => state.profile);
 
 
   return (
@@ -50,8 +50,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="catalog/:catalogName" element={<Catalog />} />
-        <Route path="courses/:courseId" element={<CourseDetails />} />
+
 
 
         <Route path="login" element={<OpenRoute>
@@ -87,6 +86,11 @@ function App() {
 
 
 
+
+        <Route path="catalog/:catalogName" element={<Catalog />} />
+        <Route path="courses/:courseId" element={<CourseDetails />} />
+
+
         <Route
           element={
             <PrivateRoute>
@@ -94,59 +98,59 @@ function App() {
               <Dashboard />
 
             </PrivateRoute>
-          } 
+          }
         >
 
 
           <Route path="dashboard/my-profile" element={<MyProfile />} />
-          <Route path="dashboard/settings" element={<Settings/>} />
+          <Route path="dashboard/settings" element={<Settings />} />
 
           {
-            user?.accountType ===  ACCOUNT_TYPE.STUDENT && (
+            user?.accountType === ACCOUNT_TYPE.STUDENT && (
               <>
-                    <Route path="dashboard/enrolled-courses" element={<EnrolledCourses/>} />
-                    <Route path="dashboard/cart" element={<Cart/>} />
+                <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />
+                <Route path="dashboard/cart" element={<Cart />} />
 
               </>
             )
           }
-          
+
           {
-            user?.accountType ===  ACCOUNT_TYPE.INSTRUCTOR && (
+            user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
               <>
-                    <Route path="dashboard/add-course" element={<AddCourse/>} />
+                <Route path="dashboard/add-course" element={<AddCourse />} />
 
-                    <Route path="dashboard/my-courses" element={<MyCourses/>} />
-                
-                    <Route path="dashboard/edit-course/:courseId" element={<EditCourse/>} />
+                <Route path="dashboard/my-courses" element={<MyCourses />} />
 
-                    <Route path="dashboard/instructor" element={<Instructor/>} />
+                <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} />
+
+                <Route path="dashboard/instructor" element={<Instructor />} />
               </>
             )
-          } 
-
-        </Route> 
-
-
-
-        <Route element = {
-              <PrivateRoute> 
-
-                <ViewCourse/>
-
-              </PrivateRoute>
           }
+
+        </Route>
+
+
+
+        <Route element={
+          <PrivateRoute>
+
+            <ViewCourse />
+
+          </PrivateRoute>
+        }
         >
 
-            {
-              user?.accountType === ACCOUNT_TYPE.STUDENT && (
-                <>
-                  <Route path="view-course/:courseId/section/:sectionId/sub-section/:SubsectionId" element={<VideoDetails/>} />
-                </>
-              )
-            }
+          {
+            user?.accountType === ACCOUNT_TYPE.STUDENT && (
+              <>
+                <Route path="view-course/:courseId/section/:sectionId/sub-section/:SubsectionId" element={<VideoDetails />} />
+              </>
+            )
+          }
 
-          
+
 
 
         </Route>
@@ -157,7 +161,7 @@ function App() {
 
 
 
-        <Route path="*" element={<Error/>} />
+        <Route path="*" element={<Error />} />
 
 
 

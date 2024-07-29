@@ -61,7 +61,7 @@ const Navbar = () => {
 
 
   return (
-    <div>
+    <div className='  h-10 '>
       <div className='h-12 border-b border-b-richblack-700 flex items-center fixed top-0 z-30 w-screen bg-black bg-opacity-80 mb-20'>
         <div className='lg:w-11/12 lg:max-w-maxContent  mx-auto   flex items-center   justify-evenly '>
 

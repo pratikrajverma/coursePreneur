@@ -27,7 +27,7 @@ const Home = () => {
             >
                 <div className=' lg:ml-24 '>
                     <div className='flex flex-col   w-[90%] lg:mx-0 mx-auto lg:w-[50%]'>
-                        <div className='group   mt-16 rounded-full bg-richblue-800 font-bold text-richblack-200  
+                        <div className='group   lg:mt-16 mb-10 rounded-full bg-richblue-800 font-bold text-richblack-200  
                                 transition-all duration-200 hover:scale-95 w-fit  '>
 
                             <Link to={"/signup"}>

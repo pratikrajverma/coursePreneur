@@ -10,7 +10,8 @@ const CodeBlocks = ({position, heading, subheading, ctabtn1, ctabtn2, codeblock,
   return (
     <div className={`flex ${position} lg:ml-20 mx-5 sm:pr-2 my-20 justify-between lg:gap-10   `}>   
         {/* section 1 button block*/}
-        <div className='w-[50%] flex flex-col gap-8 '>
+        <div className='w-[50%] hidden lg:flex lg:opacity-100 opacity-0 flex-wrap flex-col gap-8'>
+
                 {heading}
      
 
@@ -40,7 +41,7 @@ const CodeBlocks = ({position, heading, subheading, ctabtn1, ctabtn2, codeblock,
 
 
         {/* section 2 codes block */}
-        <div className='h-fit  flex lg:text-[18px]   sm:w-[200px] sm:mr-3  overflow-hidden  py-4 lg:w-[500px] relative '
+        <div className='h-fit mx-10 flex lg:text-[18px]     w-[300px]    overflow-hidden  py-4 lg:w-[500px] relative '
             style={{  backgroundImage: 'linear-gradient(121.74deg, rgba(255, 255, 255, 0.22) -7.75%, rgba(255, 255, 255, 0) 37.38%)' }}            
             >
 

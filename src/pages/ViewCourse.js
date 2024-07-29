@@ -40,7 +40,7 @@ const ViewCourse = () => {
       <div className="flex">
         <VideoDetailsSlider setReviewModal={setReviewModal} />
 
-        <div className="w-[70%] border text-white">
+        <div className="lg:w-[70%] w-screen border text-white">
           <Outlet />
         </div>
       </div>

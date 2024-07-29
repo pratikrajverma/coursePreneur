@@ -165,11 +165,11 @@ const CourseDetails = () => {
     <div className='flex flex-col text-white'>
 
       {/* Section 1 */}
-      <div className='bg-richblack-800 py-20 px-52 relative flex flex-col gap-3  '>
+      <div className='bg-richblack-800 lg:py-20 px-8 py-8 lg:px-52 relative flex flex-col gap-3  '>
 
         <p className='text-3xl font-semibold'>{courseName}</p>
 
-        <p className='text-gray-300'>{courseDescription}</p>
+        <p className='text-gray-300 w-64'>{courseDescription}</p>
 
         <div className='flex gap-3'>
           <span>{avgRatingCount}</span>
@@ -196,7 +196,7 @@ const CourseDetails = () => {
 
 
         {/* ................. course card  ............ */}
-        <div className=' absolute top-20 right-60'>
+        <div className=' lg:absolute lg:top-20 lg:right-60'>
           <CourseDetailsCard
             course={courseData}
             setConfirmationModal={setConfirmationModal}

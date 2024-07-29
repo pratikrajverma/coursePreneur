@@ -14,7 +14,7 @@ const SidebarLink = ({link, iconName}) => {
     }
 
   return (
-    <div className={`relative  ${matchroute(link.path) ? 'bg-yellow-800'  : 'bg-opacity-0'} py-2 px-4  `}>
+    <div className={`relative  ${matchroute(link.path) ? 'bg-yellow-800'  : 'bg-opacity-0'} py-2 lg:px-4 px-1   `}>
         <NavLink
             to={link.path}
             className={`  text-sm font-medium  `}
@@ -28,7 +28,7 @@ const SidebarLink = ({link, iconName}) => {
 
             <div className='flex gap-2 ab'>
                 <Icon className="text-lg"/>
-                <span>{link.name}</span>
+                <span className='text-xs'>{link.name}</span>
             </div>
         </NavLink>
     </div>

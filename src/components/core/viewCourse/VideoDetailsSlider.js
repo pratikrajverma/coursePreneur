@@ -79,20 +79,20 @@ const VideoDetailsSlider = ({ setReviewModal }) => {
 
       <div className='flex flex-col pt-10 gap-y-6'>
         {/*............... for heading............... */}
-        <div className='flex gap-4 justify-between px-5' >
+        <div className='lg:flex gap-4 justify-between lg:px-5' >
           <p className='  font-semibold'>{courseEntireData?.courseName}</p>
           <p className='text-caribbeangreen-200 font-semibold'>{completedLectures?.length} / {totalNoOfLectures}</p>
         </div>
 
 
         {/*............... for button  ...............*/}
-        <div className='flex gap-3   justify-center '>
-          <button onClick={() => { navigate('/dashboard/enrolled-courses') }} className='videoBtn' >
+        <div className='flex lg:flex-row flex-col gap-3   justify-center px-1'>
+          <button onClick={() => { navigate('/dashboard/enrolled-courses') }} className='videoBtn text-sm lg:w-fit lg:h-fit w-16 h-16 text-center ' >
             Back
           </button>
 
 
-          <button onClick={ handleReviewModal} className='videoBtn'>
+          <button onClick={ handleReviewModal} className='videoBtn text-sm lg:w-fit lg:h-fit w-16 h-16 text-center'>
             Add Review
           </button>
 
@@ -111,7 +111,7 @@ const VideoDetailsSlider = ({ setReviewModal }) => {
               onClick={() => setActiveStatus(section._id)}
             >
               {/*.......... section ...............*/}
-              <div className='  py-4 bg-richblack-700 flex justify-between px-3'>
+              <div className='  py-4 bg-richblack-700 lg:flex justify-between lg:px-3'>
                 <div>
                   {section.sectionName}
                 </div>
@@ -133,7 +133,7 @@ const VideoDetailsSlider = ({ setReviewModal }) => {
                       {
                         section.Subsection?.map((topic, index) => (
                           <div key={index}
-                            className={`flex gap-3 py-1 px-4 ${videobarActive === topic._id
+                            className={`lg:flex gap-3 py-2 lg:px-4 ${videobarActive === topic._id
                               ? 'bg-yellow-100 text-black'
                               : 'bg-gray-600 text-white'} `}
                             onClick={() => {

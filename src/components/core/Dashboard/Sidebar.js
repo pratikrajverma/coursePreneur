@@ -29,7 +29,7 @@ const Sidebar = () => {
 
 
   return (
-    <div className='flex flex-col lg:min-w-[222px] py-10'>
+    <div className='flex flex-col lg:min-w-[222px]   w-20 py-10'>
 
       <div>
         {
@@ -74,12 +74,12 @@ const Sidebar = () => {
           }}
 
 
-          className='text-sm font-medium flex gap-6 px-4 text-richblack-300'
+          className='text-sm font-medium flex lg:gap-6  gap-2 lg:px-4 text-richblack-300'
         >
           <div className='flex items-center gap-x-2'>
             <VscSignOut className='text-lg' />
           </div>
-          <span>Logout</span>
+          <span className='text-xs '>Logout</span>
 
         </button>
       </div>

@@ -45,10 +45,10 @@ const [enrolledCourses, setEnrolledCourses] = useState(null);
                 ) : (
                     !enrolledCourses.length ? (<p>you have not any courses</p>) : (
                         <div className='border mt-20 rounded-md overflow-hidden border-gray-600'>
-                            <div className='flex justify-between border-b border-gray-600 text-gray-200  bg-blue-900   p-6'>
+                            <div className='flex justify-between border-b border-gray-600 text-gray-200  bg-blue-900  p-2 lg:p-6'>
                                 <p >Course Name</p>
                                 <p >Durations</p>
-                                <div className='  w-[30%]'><p >Progress</p></div>
+                                <div className='  lg:w-[30%]'><p >Progress</p></div>
                             </div>
 
                             {/* showing course cards */}
@@ -56,10 +56,10 @@ const [enrolledCourses, setEnrolledCourses] = useState(null);
                                 enrolledCourses.map((course, index) =>
                                 (
                                     <div key={index}
-                                        className='flex justify-between border-b  border-gray-600   h-[100px] p-4'
+                                        className='flex hover:border-caribbeangreen-200 hover:border-2 hover:shadow-white flex-wrap justify-between border-b  border-gray-600   lg:h-[100px] lg:p-4 p-4'
                                     >
                                          
-                                        <div className='w-[35%] flex gap-4 cursor-pointer'
+                                        <div className='w-[35%] flex lg:gap-4 cursor-pointer'
                                             onClick={() => {
                                                 navigate(
                                                     `/view-course/${course._id}/section/${course.courseContent[0]._id}/sub-section/${course.courseContent[0].Subsection[0]}`
@@ -71,8 +71,8 @@ const [enrolledCourses, setEnrolledCourses] = useState(null);
                                                 alt='Image'
                                             />
                                             <div>
-                                                <p className='text-xl font-semibold'>{course.courseName}</p>
-                                                <p className='text-sm text-gray-300'>{course.courseDescription.substr(0, 60)}</p>
+                                                <p className='lg:text-xl font-semibold'>{course.courseName}</p>
+                                                <p className='text-sm text-gray-300'>{course.courseDescription.substr(0, 30)}.....</p>
                                             </div>
                                         </div>
 
@@ -80,8 +80,8 @@ const [enrolledCourses, setEnrolledCourses] = useState(null);
                                             {course.totalDuration}
                                         </div>
 
-                                        <div className='  w-[30%] gap-8 flex'>
-                                            <div className='w-[80%]'>
+                                        <div className='   lg:w-[30%] my-4 gap-8 flex'>
+                                            <div className='lg:w-[80%]'>
                                                 <p>Progress : {course.progressPercentege || 0}</p>
 
                                                 <ProgressBar
