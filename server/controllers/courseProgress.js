@@ -46,7 +46,7 @@ const Subsection = require("../models/Subsection");
 
         }
 
-        await courseProgress.save();        //This line saves the changes made to the courseProgress document back to the MongoDB database. 
+        await courseProgress.save();       
 
 
         return res.status(200).json({

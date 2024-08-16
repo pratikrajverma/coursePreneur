@@ -5,13 +5,11 @@ const TimelineLeftBox = ({element, index  }) => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setShowBorder((preShowborder) => (preShowborder+1) % 5); // Assuming there are 5 elements
-                                                                    //Note: Jab aap preShowborder++ ka istemal karte hain, toh preShowborder ki value badh jati hai lekin state mein yeh badlav nahi hota hai. Agar aap usi state ka istemal karte hain aur usme koi badlav karte hain, toh actual state update nahi hoti hai. Iska matalab hai ki, agar aap preShowborder++ ka istemal karte hain, toh React state mein badlav nahi hoga, sirf temporary value badh jayeg
-                                                                    //Isliye, React state ko actual mein update karne ke liye functional update syntax ka istemal hota hai, jismein hum pichli state ko lekar usme koi badlav karte hain aur fir updated value ko return karte hain. Is tarah se, hum state ko sahi dhang se update kar sakte hain aur actual state ko badal sakte hain.
-        }, 1000); // Adjust the interval duration as needed
+            setShowBorder((preShowborder) => (preShowborder+1) % 5);  
+        }, 1000);  
         
  
-        return () => clearInterval(interval);   //If your component is not unmounting, the cleanup function () => clearInterval(interval) returned from the useEffect hook won't execute. This function is designed to clean up any side effects (like clearing intervals) when the component unmounts, but if the component remains mounted, it won't be called
+        return () => clearInterval(interval);   
     }, []);
     
    

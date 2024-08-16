@@ -21,9 +21,7 @@ const resetPasswordToken = async (req, res) => {
             })
         }
 
-        //generate token
-        // const token = crypto.randomUUID();      //Yeh line ek random unique token generate karta hai, jo password reset ke liye istemal kiya jayega. crypto.randomUUID() ek built-in Node.js function hai jo secure random UUID (Universally Unique Identifier) generate karta hai.
-                                                //Token generation process password reset me ek aur suraksha parat add karta hai. Jabki email ke zariye reset link bhejna aam taur par surakshit hota hai, lekin token URL me shamil karne se suraksha aur bhi badh jati hai kyunki yeh ensure karta hai ki sirf wahi vyakti jo password reset kiya hai, vahi process ko poora kar sakta hai. 
+         
 
         const token = crypto.randomBytes(20).toString("hex");
 

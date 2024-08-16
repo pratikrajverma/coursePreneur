@@ -27,7 +27,7 @@ const ReviewSlider = () => {
 
       if (response?.data?.success) {
         setReviews(response?.data?.allReviews)
-        console.log('printing reviews', reviews);
+        
       }
 
 
@@ -35,7 +35,7 @@ const ReviewSlider = () => {
     }
 
     fetchAllReviews();
-  })
+  },[])
 
   return (
     <div className='text-white'>
