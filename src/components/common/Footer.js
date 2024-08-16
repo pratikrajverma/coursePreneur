@@ -18,7 +18,7 @@ const Footer = () => {
 
           <div className='flex lg:w-[50%] w-screen justify-center   h-fit lg:h-[90%] lg:justify-around  '>
             <div className='flex flex-col lg:gap-10'>
-              <img className='h-[35px]' src={logofullLight} />
+              {/* <img className='h-[35px]' src={logofullLight} /> */}
               <Footerlinks title={FooterLink2[7].title} links={FooterLink2[7].links} />
 
             </div>
